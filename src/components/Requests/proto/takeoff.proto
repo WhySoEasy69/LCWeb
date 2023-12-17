@@ -1,0 +1,24 @@
+syntax="proto3";
+
+package takeoff;
+
+
+message TakeoffRequest {
+  // airplane weight 
+  double m = 1;
+  // airplane's wing area
+  double S = 2;
+  // lifting force coefficient (experimental data)
+  float Cy_takeoff = 3;
+  // pull 
+  double P = 4;
+  // airport name or IATA, ICAO code
+  string Airport = 5;
+}
+
+message TakeoffResponse {
+  // takeoff speed
+  int32 V_takeoff = 1;
+  // takeoff run
+  int32 L_takeoff = 2;
+}

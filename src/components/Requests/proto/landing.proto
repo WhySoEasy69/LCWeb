@@ -1,0 +1,24 @@
+syntax="proto3";
+
+package landing;
+
+
+message LandingRequest {
+  // airplane weight 
+  double m = 1;
+  // airplane's wing area
+  double S = 2;
+  // lifting force coefficient (experimental data)
+  float Cy_land = 3;
+  // pull 
+  double P = 4;
+  // airport name or IATA, ICAO code
+  string Airport = 5;
+}
+
+message LandingResponse {
+  // landing speed
+  int32 V_land = 1;
+  // landing run
+  int32 L_land = 2;
+}

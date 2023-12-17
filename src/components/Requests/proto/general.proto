@@ -1,0 +1,17 @@
+syntax="proto3";
+
+import "landing.proto";
+import "takeoff.proto";
+
+package general;
+
+
+message Request {
+    landing.LandingRequest landingReq = 1;
+    takeoff.TakeoffRequest takeoffReq = 2;
+}
+
+message Response {
+    landing.LandingResponse landingResp = 1;
+    takeoff.TakeoffResponse takeoffResp = 2;
+}
