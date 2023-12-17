@@ -9,7 +9,7 @@ class LandingInput extends React.Component {
     }
 
     render() {
-        return (<form>
+        return (<form className="RequestInput">
             <label htmlFor="send_landingreq">{"Send:"}</label>
             <input name="send_landingreq" type="checkbox"
                 onChange={(e) => this.handleStateChange({ send_landingreq: e.target.checked })}></input>

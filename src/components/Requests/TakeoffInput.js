@@ -9,7 +9,7 @@ class TakeoffInput extends React.Component {
     }
 
     render() {
-        return (<form>
+        return (<form className="RequestInput">
             <label htmlFor="send_takeoffreq">{"Send:"}</label>
             <input name="send_takeoffreq" type="checkbox"
                 onChange={(e) => this.handleStateChange({ send_takeoffreq: e.target.checked })}></input>

@@ -3,7 +3,7 @@ import React from "react"
 
 class LandingOutput extends React.Component {
     render() {
-        return (<div>
+        return (<div className="ResponseOutput">
             <label htmlFor="land_speed">{"V (landing speed):"}</label>
             <input name="land_speed" placeholder="exmpl: 350 (in km/h)" type="text" readOnly></input>
             <label htmlFor="land_runway">{"L (landing runway length):"}</label>

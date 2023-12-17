@@ -9,7 +9,7 @@ class GeneralInput extends React.Component {
     }
 
     render() {
-        return (<form>
+        return (<form className="RequestInput">
             <label htmlFor="wing_area">{"S (wing area):"}</label>
             <input name="wing_area" placeholder="exmpl: 250 (in m2)" type="text"
                 onChange={(e) => this.handleStateChange({ wing_area: e.target.value })}></input>

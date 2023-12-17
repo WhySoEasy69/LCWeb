@@ -6,7 +6,7 @@ import "./css/responses.css"
 class Response extends React.Component {
     render() {
         return (
-            <div>
+            <div div className="ResponseOutput">
                 <h2>{"Landing Output:"}</h2>
                 <LandingOutput />
                 <h2>{"Takeoff Output:"}</h2>

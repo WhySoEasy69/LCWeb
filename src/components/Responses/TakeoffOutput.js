@@ -3,7 +3,7 @@ import React from "react"
 
 class TakeoffOutput extends React.Component {
     render() {
-        return (<div>
+        return (<div div className="ResponseOutput">
             <label htmlFor="takeoff_speed">{"V (takeoff speed):"}</label>
             <input name="takeoff_speed" placeholder="exmpl: 350 (in km/h)" type="text" readOnly></input>
             <label htmlFor="takeoff_runway">{"L (takeoff runway length):"}</label>

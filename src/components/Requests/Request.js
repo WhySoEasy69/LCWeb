@@ -54,7 +54,7 @@ class Request extends React.Component {
     }
 
     render() {
-        return (<div>
+        return (<div className="RequestInput">
             <h2>{"General data input:"}</h2>
             <GeneralInput handleStateChange={this.handleGeneralState} />
             <h2>{"Landing data input:"}</h2>
