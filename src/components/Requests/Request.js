@@ -14,12 +14,6 @@ class Request extends React.Component {
     constructor(props) {
         super(props)
 
-        const server = {
-            ip: '127.0.0.1',
-            port: 1237
-        }
-        this.client = new Client(server, this.OnRequest, this.OnResponse, this.OnConnection)
-
         this.state = {
             generalInput: {
                 wing_area: '',
@@ -38,19 +32,17 @@ class Request extends React.Component {
             }
         }
 
-        /*
-        this.state = {
-            generalInput: {},
-            landingInput: {},
-            takeoffInput: {}
-        }
-        */
-
         this.handleGeneralState = this.handleGeneralState.bind(this)
         this.handleLandingState = this.handleLandingState.bind(this)
         this.handleTakeoffState = this.handleTakeoffState.bind(this)
         this.OnRequest = this.OnRequest.bind(this)
         this.OnResponse = this.OnResponse.bind(this)
+
+        const server = {
+            ip: '127.0.0.1',
+            port: 1237
+        }
+        this.client = new Client(server, this.OnRequest, this.OnResponse, this.OnConnection)
     }
 
     render() {
