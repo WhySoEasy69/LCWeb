@@ -96,22 +96,22 @@ class Request extends React.Component {
         if (takeoffData.send_takeoffreq) {
             const takeoffRequest = new Takeoff.TakeoffRequest();
 
-            takeoffRequest.setM(generalData.airplane_weight);
-            takeoffRequest.setS(generalData.wing_area);
-            takeoffRequest.setP(generalData.airplane_thrust);
-            takeoffRequest.setCyLand(takeoffData.takeoff_coef);
-            takeoffRequest.setAirport(takeoffData.takeoff_coef);
+            takeoffRequest.setM(parseFloat(generalData.airplane_weight));
+            takeoffRequest.setS(parseFloat(generalData.wing_area));
+            takeoffRequest.setP(parseFloat(generalData.airplane_thrust));
+            takeoffRequest.setCyLand(parseFloat(takeoffData.takeoff_coef));
+            takeoffRequest.setAirport(takeoffData.airport);
 
             request.setTakeoffreq(takeoffRequest);
         }
         if (landingData.send_landingreq) {
             const landingRequest = new Landing.LandingRequest();
 
-            landingRequest.setM(generalData.airplane_weight);
-            landingRequest.setS(generalData.wing_area);
-            landingRequest.setP(generalData.airplane_thrust);
-            landingRequest.setCyLand(landingData.land_coef);
-            landingRequest.setAirport(landingData.land_coef);
+            landingRequest.setM(parseFloat(generalData.airplane_weight));
+            landingRequest.setS(parseFloat(generalData.wing_area));
+            landingRequest.setP(parseFloat(generalData.airplane_thrust));
+            landingRequest.setCyLand(parseFloat(landingData.land_coef));
+            landingRequest.setAirport(landingData.airport);
 
             request.setLandingreq(landingRequest);
         }
