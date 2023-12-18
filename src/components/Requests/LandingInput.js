@@ -17,7 +17,7 @@ class LandingInput extends React.Component {
             </div>
             <label htmlFor="land_coef">{"Landing Cy:"}</label>
             <input name="land_coef" placeholder="exmpl: 1.002 (in ..)" type="text"
-                onChange={(e) => this.handleStateChange({ land_coef: e.target.value })}></input>
+                onChange={(e) => this.handleStateChange({ land_coef: e.target.value })} required pattern="^[+]?\d+([.]\d+)?$"></input>
             <label htmlFor="airport">{"Airport (name/IATA/ICAO):"}</label>
             <input name="airport" placeholder="DME (UUDD, Domodedovo)" type="text"
                 onChange={(e) => this.handleStateChange({ airport: e.target.checked })}></input>

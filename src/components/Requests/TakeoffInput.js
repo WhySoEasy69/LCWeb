@@ -17,7 +17,7 @@ class TakeoffInput extends React.Component {
             </div>
             <label htmlFor="takeoff_coef">{"Takeoff Cy:"}</label>
             <input name="takeoff_coef" placeholder="exmpl: 1.002 (in ..)" type="text"
-                onChange={(e) => this.handleStateChange({ takeoff_coef: e.target.value })}></input>
+                onChange={(e) => this.handleStateChange({ takeoff_coef: e.target.value })} required pattern="^[+]?\d+([.]\d+)?$"></input>
             <label htmlFor="airport">{"Airport (name/IATA/ICAO):"}</label>
             <input name="airport" placeholder="DME (UUDD, Domodedovo)" type="text"
                 onChange={(e) => this.handleStateChange({ airport: e.target.value })}></input>
