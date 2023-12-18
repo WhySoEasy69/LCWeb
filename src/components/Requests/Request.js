@@ -1,7 +1,10 @@
 import React from "react"
+import WebSocket from 'websocket';
+
 import GeneralInput from "./GeneralInput"
 import LandingInput from "./LandingInput"
 import TakeoffInput from "./TakeoffInput"
+
 import "./css/requests.css"
 
 import Client from "../../client/Client"
@@ -37,13 +40,28 @@ class Request extends React.Component {
         this.handleTakeoffState = this.handleTakeoffState.bind(this)
         this.OnRequest = this.OnRequest.bind(this)
         this.OnResponse = this.OnResponse.bind(this)
+        this.SendRequest = this.SendRequest.bind(this)
 
-        const server = {
-            ip: '127.0.0.1',
-            port: 1237
-        }
-        this.client = new Client(server, this.OnRequest, this.OnResponse, this.OnConnection)
+        //this.client = null
     }
+
+    componentDidMount() {
+        //this.socket = new WebSocket('ws://localhost:1237');
+        console.log("Component did mount")
+    }
+
+    /*
+    componentDidMount() {
+        if (!this.client) {
+            const server = {
+                ip: '127.0.0.1',
+                port: 1237
+            };
+            this.client = new Client(server, this.OnRequest, this.OnResponse, this.OnConnection);
+            //this.client.setState(this.state); // Set the client's state to have access to the component's state data
+        }
+    }
+    */
 
     render() {
         return (<div className="RequestInput">
@@ -53,8 +71,13 @@ class Request extends React.Component {
             <LandingInput handleStateChange={this.handleLandingState} />
             <h2>{"Takeoff data input:"}</h2>
             <TakeoffInput handleStateChange={this.handleTakeoffState} />
-            <button onClick={this.client.SendRequest}>{"Send request"}</button>
+            <button onClick={this.SendRequest}>{"Send request"}</button>
         </div>)
+    }
+
+    SendRequest() {
+        const data = this.OnRequest()
+        //this.socket.send(data)
     }
 
     handleGeneralState(newGeneralInput) {
