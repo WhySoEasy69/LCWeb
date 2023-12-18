@@ -1,5 +1,5 @@
 import React from "react"
-import WebSocket from 'websocket';
+//import WebSocket from 'websocket';
 
 import GeneralInput from "./GeneralInput"
 import LandingInput from "./LandingInput"
@@ -41,7 +41,6 @@ class Request extends React.Component {
         this.OnRequest = this.OnRequest.bind(this)
         this.OnResponse = this.OnResponse.bind(this)
         this.SendRequest = this.SendRequest.bind(this)
-
         //this.client = null
     }
 
