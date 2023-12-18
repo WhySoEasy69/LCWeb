@@ -12,7 +12,7 @@ class GeneralInput extends React.Component {
         return (<form className="RequestInput">
             <label htmlFor="wing_area">{"S (wing area):"}</label>
             <input name="wing_area" placeholder="exmpl: 250 (in m2)" type="text"
-                onChange={(e) => this.handleStateChange({ wing_area: e.target.value })}></input>
+                onChange={(e) => this.handleStateChange({ wing_area: e.target.value })} required></input>
             <label htmlFor="airplane_weight">{"M (airplane weight):"}</label>
             <input name="airplane_weight" placeholder="exmpl: 25000 (in kg)" type="text"
                 onChange={(e) => this.handleStateChange({ airplane_weight: e.target.value })}></input>
